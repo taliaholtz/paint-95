@@ -9,32 +9,6 @@ var bobRoss=function(){
     document.getElementsByTagName(cell).className=paint;
 }
 
-var controls=document.createElement('div');
-controls.id="controls";
-document.body.appendChild(controls);
-var easel=document.createElement('div');
-easel.id="easel";
-document.body.appendChild(easel);
-var canvas=document.createElement('div');
-canvas.id="canvas";
-easel.appendChild(canvas);
-
-var tbl=document.createElement('table');
-var tblBody=document.createElement('tbody');
-for (var i=0;i<50;i++){
-    var row=document.createElement('tr');
-    for (var j=0;j<50;j++){
-        var cell=document.createElement('td');
-        cell.addEventListener("click",bobRoss);
-        row.appendChild(cell);
-    }
-    tblBody.appendChild(row);
-}
-tbl.appendChild(tblBody);
-canvas.appendChild(tbl);
-tbl.id="table";
-tbl.cellSpacing="0";
-
 //color choices
 var redBtn=document.createElement('label');
 redBtn.className="btn";
@@ -105,3 +79,30 @@ purpleBtn.appendChild(purpleInput);
 var purpleSquare=document.createElement('div');
 purpleSquare.className="purple";
 purpleBtn.appendChild(purpleSquare);
+
+//canvas set-up
+var controls=document.createElement('div');
+controls.id="controls";
+document.body.appendChild(controls);
+var easel=document.createElement('div');
+easel.id="easel";
+document.body.appendChild(easel);
+var canvas=document.createElement('div');
+canvas.id="canvas";
+easel.appendChild(canvas);
+
+var tbl=document.createElement('table');
+var tblBody=document.createElement('tbody');
+for (var i=0;i<50;i++){
+    var row=document.createElement('tr');
+    for (var j=0;j<50;j++){
+        var cell=document.createElement('td');
+        cell.addEventListener("click",bobRoss);
+        row.appendChild(cell);
+    }
+    tblBody.appendChild(row);
+}
+tbl.appendChild(tblBody);
+canvas.appendChild(tbl);
+tbl.id="table";
+tbl.cellSpacing="0";
