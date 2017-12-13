@@ -1,3 +1,12 @@
+var setMarker=function(){
+    var paintColor=document.getElementById("color").selected;
+    localStorage.setItem("marker",paintColor);
+}
+var bobRoss=function(){
+    var paint=localStorage.getItem("marker");
+    document.getElementsByTagName(td).className=paint;
+}
+
 var controls=document.createElement('div');
 controls.id="controls";
 document.body.appendChild(controls);
@@ -25,24 +34,23 @@ tbl.cellSpacing="0";
 
 var red=document.createElement('button');
 red.className="color red";
+red.addEventListener("click",setMarker);
 controls.appendChild(red);
 var blue=document.createElement('button');
 blue.className="color blue";
+blue.addEventListener("click",setMarker);
 controls.appendChild(blue);
 var green=document.createElement('button');
 green.className="color green";
+green.addEventListener("click",setMarker);
 controls.appendChild(green);
 var coral=document.createElement('button');
 coral.className="color coral";
+coral.addEventListener("click",setMarker);
 controls.appendChild(coral);
 var purple=document.createElement('button');
 purple.className="color purple";
+purple.addEventListener("click",setMarker);
 controls.appendChild(purple);
-/*
-td.onclick="bobRoss();"
 
-var bobRoss=function(){
-    if(button.className("blue").checked){
-        document.getElementsByTagName(td).className="blue";
-    }
-}*/
+td.onclick="bobRoss();"
