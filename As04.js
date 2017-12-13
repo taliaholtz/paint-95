@@ -1,5 +1,5 @@
 var setMarker=function(){
-    var paintColor=document.getElementsByClassName("color").checked;
+    var paintColor=document.getElementsByName("color").checked;
     console.log(paintColor);
     localStorage.setItem("marker",paintColor);
 }
@@ -8,6 +8,16 @@ var bobRoss=function(){
     console.log(paint);    
     document.getElementsByTagName(cell).className=paint;
 }
+
+var controls=document.createElement('div');
+controls.id="controls";
+document.body.appendChild(controls);
+var easel=document.createElement('div');
+easel.id="easel";
+document.body.appendChild(easel);
+var canvas=document.createElement('div');
+canvas.id="canvas";
+easel.appendChild(canvas);
 
 //color choices
 var redBtn=document.createElement('label');
@@ -81,16 +91,6 @@ purpleSquare.className="purple";
 purpleBtn.appendChild(purpleSquare);
 
 //canvas set-up
-var controls=document.createElement('div');
-controls.id="controls";
-document.body.appendChild(controls);
-var easel=document.createElement('div');
-easel.id="easel";
-document.body.appendChild(easel);
-var canvas=document.createElement('div');
-canvas.id="canvas";
-easel.appendChild(canvas);
-
 var tbl=document.createElement('table');
 var tblBody=document.createElement('tbody');
 for (var i=0;i<50;i++){
