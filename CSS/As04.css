@@ -24,6 +24,12 @@ label input:checked+div, label input:checked+img{
 .btn img{
     margin-left:15px;
 }
+.btn button{
+    float:right;
+    margin:9px 5px;
+    font-family:arial;
+    padding:5px 10px;
+}
 .red{
     background-color:red;
 }
@@ -39,6 +45,9 @@ label input:checked+div, label input:checked+img{
 .purple{
     background-color:purple;
 }
+td.white{
+    background-color:white;
+}
 #easel{
     background-color:gray;
     height:600px;
@@ -47,9 +56,9 @@ label input:checked+div, label input:checked+img{
     border:2px solid gray;
     border-top:none;
 }
-td{
-    width:10px;
-    height:10px;
+table tbody tr td{
+    width:5px;
+    height:5px;
     margin:0px;
     padding:0px;
     border-collapse:collapse;

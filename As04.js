@@ -23,6 +23,12 @@ var bobRossPro=function(){
 var stopRoss=function(){
     draw=false;
 }
+var startOver=function(){
+    var pixels=document.getElementsByTagName('td');
+    for (var i=0;i<pixels.length;i++){
+        pixels[i].className="white";
+    }
+}
 
 var controls=document.createElement('div');
 controls.id="controls";
@@ -121,13 +127,23 @@ eraseImg.className="white";
 eraseImg.src="http://pngimg.com/uploads/eraser/eraser_PNG33.png";
 eraseBtn.appendChild(eraseImg);
 
+//clear screen
+var clearBtn=document.createElement('label');
+clearBtn.className="btn";
+controls.appendChild(clearBtn);
+var clearAll=document.createElement('button');
+clearAll.textContent="Start Over";
+clearAll.addEventListener("click",startOver);
+clearBtn.appendChild(clearAll);
+
 //canvas set-up
 var tbl=document.createElement('table');
 var tblBody=document.createElement('tbody');
-for (var i=0;i<50;i++){
+for (var i=0;i<100;i++){
     var row=document.createElement('tr');
-    for (var j=0;j<50;j++){
+    for (var j=0;j<100;j++){
         var cell=document.createElement('td');
+        cell.className="pixel";
         var draw=false;
         cell.addEventListener("mousedown",bobRoss);
         cell.addEventListener("mousemove",bobRossPro);
