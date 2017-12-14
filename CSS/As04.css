@@ -1,5 +1,5 @@
 #controls{
-    height:100px;
+    height:50px;
     background-color:burlywood;
     border:2px solid gray;
 }
@@ -16,10 +16,10 @@ label input:checked+div{
   }
 #controls .btn div{
     display:inline-block;
-    height:50px;
-    width:50px;
-    margin-left:10px;
-    margin-top:24px;
+    height:20px;
+    width:20px;
+    margin-left:5px;
+    margin-top:14px;
 }
 .red{
     background-color:red;
@@ -38,15 +38,15 @@ label input:checked+div{
 }
 #easel{
     background-color:gray;
+    height:600px;
 }
 #table{
     border:2px solid gray;
     border-top:none;
 }
-#table tbody tr td{
+td{
     width:10px;
     height:10px;
-    border:gray solid 1px;        
     margin:0px;
     padding:0px;
     border-collapse:collapse;

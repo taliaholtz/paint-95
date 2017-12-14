@@ -1,12 +1,18 @@
 var setMarker=function(){
-    var paintColor=document.getElementsByName("color").checked;
-    console.log(paintColor);
-    localStorage.setItem("marker",paintColor);
+    var choices=document.getElementsByName('color');
+    for (var i=0;i<choices.length;i++){
+        if(choices[i].checked){
+            var paintColor=(choices[i].value);
+            localStorage.setItem("marker",paintColor);            
+        }
+    }
+    console.log(localStorage.getItem("marker"));
 }
 var bobRoss=function(){
     var paint=localStorage.getItem("marker");
-    console.log(paint);    
-    document.getElementsByTagName(cell).className=paint;
+    console.log(paint);  
+    var pixel=event.target;
+    pixel.className=paint;
 }
 
 var controls=document.createElement('div');
@@ -22,13 +28,13 @@ easel.appendChild(canvas);
 //color choices
 var redBtn=document.createElement('label');
 redBtn.className="btn";
-redBtn.addEventListener("click",setMarker);
 controls.appendChild(redBtn);
 var redInput=document.createElement('input');
 redInput.type="radio";
 redInput.class="button red";
 redInput.name="color";
 redInput.value="red";
+redInput.addEventListener("click",setMarker);
 redBtn.appendChild(redInput);
 var redSquare=document.createElement('div');
 redSquare.className="red";
@@ -36,13 +42,13 @@ redBtn.appendChild(redSquare);
 
 var blueBtn=document.createElement('label');
 blueBtn.className="btn";
-blueBtn.addEventListener("click",setMarker);
 controls.appendChild(blueBtn);
 var blueInput=document.createElement('input');
 blueInput.type="radio";
 blueInput.class="button blue";
 blueInput.name="color";
 blueInput.value="blue";
+blueInput.addEventListener("click",setMarker);
 blueBtn.appendChild(blueInput);
 var blueSquare=document.createElement('div');
 blueSquare.className="blue";
@@ -50,13 +56,13 @@ blueBtn.appendChild(blueSquare);
 
 var greenBtn=document.createElement('label');
 greenBtn.className="btn";
-greenBtn.addEventListener("click",setMarker);
 controls.appendChild(greenBtn);
 var greenInput=document.createElement('input');
 greenInput.type="radio";
 greenInput.class="button green";
 greenInput.name="color";
 greenInput.value="green";
+greenInput.addEventListener("click",setMarker);
 greenBtn.appendChild(greenInput);
 var greenSquare=document.createElement('div');
 greenSquare.className="green";
@@ -64,13 +70,13 @@ greenBtn.appendChild(greenSquare);
 
 var coralBtn=document.createElement('label');
 coralBtn.className="btn";
-coralBtn.addEventListener("click",setMarker);
 controls.appendChild(coralBtn);
 var coralInput=document.createElement('input');
 coralInput.type="radio";
 coralInput.class="button coral";
 coralInput.name="color";
 coralInput.value="coral";
+coralInput.addEventListener("click",setMarker);
 coralBtn.appendChild(coralInput);
 var coralSquare=document.createElement('div');
 coralSquare.className="coral";
@@ -78,13 +84,13 @@ coralBtn.appendChild(coralSquare);
 
 var purpleBtn=document.createElement('label');
 purpleBtn.className="btn";
-purpleBtn.addEventListener("click",setMarker);
 controls.appendChild(purpleBtn);
 var purpleInput=document.createElement('input');
 purpleInput.type="radio";
 purpleInput.class="button purple";
 purpleInput.name="color";
 purpleInput.value="purple";
+purpleInput.addEventListener("click",setMarker);
 purpleBtn.appendChild(purpleInput);
 var purpleSquare=document.createElement('div');
 purpleSquare.className="purple";
