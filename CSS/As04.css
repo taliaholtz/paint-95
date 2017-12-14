@@ -30,6 +30,9 @@ label input:checked+div, label input:checked+img{
     font-family:arial;
     padding:5px 10px;
 }
+.black{
+    background-color:black;
+}
 .red{
     background-color:red;
 }
@@ -63,4 +66,5 @@ table tbody tr td{
     padding:0px;
     border-collapse:collapse;
     background-color:white;
+    cursor:crosshair;
 }

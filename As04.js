@@ -29,6 +29,9 @@ var startOver=function(){
         pixels[i].className="white";
     }
 }
+var defaultBlack=function(){
+    localStorage.setItem("marker","black");
+}
 
 var controls=document.createElement('div');
 controls.id="controls";
@@ -41,6 +44,21 @@ canvas.id="canvas";
 easel.appendChild(canvas);
 
 //color choices
+var blackBtn=document.createElement('label');
+blackBtn.className="btn";
+controls.appendChild(blackBtn);
+var blackInput=document.createElement('input');
+blackInput.type="radio";
+blackInput.class="button black";
+blackInput.name="color";
+blackInput.value="black";
+blackInput.checked=true;
+blackInput.addEventListener("click",setMarker);
+blackBtn.appendChild(blackInput);
+var blackSquare=document.createElement('div');
+blackSquare.className="black";
+blackBtn.appendChild(blackSquare);
+
 var redBtn=document.createElement('label');
 redBtn.className="btn";
 controls.appendChild(redBtn);
@@ -139,9 +157,9 @@ clearBtn.appendChild(clearAll);
 //canvas set-up
 var tbl=document.createElement('table');
 var tblBody=document.createElement('tbody');
-for (var i=0;i<100;i++){
+for (var i=0;i<110;i++){
     var row=document.createElement('tr');
-    for (var j=0;j<100;j++){
+    for (var j=0;j<175;j++){
         var cell=document.createElement('td');
         cell.className="pixel";
         var draw=false;
@@ -156,3 +174,5 @@ tbl.appendChild(tblBody);
 canvas.appendChild(tbl);
 tbl.id="table";
 tbl.cellSpacing="0";
+
+window.addEventListener("load",defaultBlack);
