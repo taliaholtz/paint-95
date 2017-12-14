@@ -11,15 +11,18 @@ label input+div{
     cursor:pointer;
     border:1px solid darkgray;
   }
-label input:checked+div{
+label input:checked+div, label input:checked+img{
     border:1px solid black;
   }
-#controls .btn div{
+#controls .btn div,img{
     display:inline-block;
     height:20px;
     width:20px;
     margin-left:5px;
     margin-top:14px;
+}
+.btn img{
+    margin-left:15px;
 }
 .red{
     background-color:red;

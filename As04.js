@@ -96,6 +96,22 @@ var purpleSquare=document.createElement('div');
 purpleSquare.className="purple";
 purpleBtn.appendChild(purpleSquare);
 
+//eraser
+var eraseBtn=document.createElement('label');
+eraseBtn.className="btn";
+controls.appendChild(eraseBtn);
+var eraseInput=document.createElement('input');
+eraseInput.type="radio";
+eraseInput.class="button white";
+eraseInput.name="color";
+eraseInput.value="white";
+eraseInput.addEventListener("click",setMarker);
+eraseBtn.appendChild(eraseInput);
+var eraseImg=document.createElement('img');
+eraseImg.className="white";
+eraseImg.src="http://pngimg.com/uploads/eraser/eraser_PNG33.png";
+eraseBtn.appendChild(eraseImg);
+
 //canvas set-up
 var tbl=document.createElement('table');
 var tblBody=document.createElement('tbody');
