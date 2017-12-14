@@ -6,13 +6,22 @@ var setMarker=function(){
             localStorage.setItem("marker",paintColor);            
         }
     }
-    console.log(localStorage.getItem("marker"));
 }
 var bobRoss=function(){
+    draw=true;
     var paint=localStorage.getItem("marker");
-    console.log(paint);  
     var pixel=event.target;
     pixel.className=paint;
+}
+var bobRossPro=function(){
+    if(draw===true){
+        var paint=localStorage.getItem("marker");
+        var pixel=event.target;
+        pixel.className=paint;
+    }
+}
+var stopRoss=function(){
+    draw=false;
 }
 
 var controls=document.createElement('div');
@@ -119,7 +128,10 @@ for (var i=0;i<50;i++){
     var row=document.createElement('tr');
     for (var j=0;j<50;j++){
         var cell=document.createElement('td');
-        cell.addEventListener("click",bobRoss);
+        var draw=false;
+        cell.addEventListener("mousedown",bobRoss);
+        cell.addEventListener("mousemove",bobRossPro);
+        cell.addEventListener("mouseup",stopRoss);
         row.appendChild(cell);
     }
     tblBody.appendChild(row);
