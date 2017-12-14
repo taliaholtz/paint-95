@@ -46,6 +46,7 @@ easel.appendChild(canvas);
 //color choices
 var blackBtn=document.createElement('label');
 blackBtn.className="btn";
+blackBtn.title="black";
 controls.appendChild(blackBtn);
 var blackInput=document.createElement('input');
 blackInput.type="radio";
@@ -61,6 +62,7 @@ blackBtn.appendChild(blackSquare);
 
 var redBtn=document.createElement('label');
 redBtn.className="btn";
+redBtn.title="red";
 controls.appendChild(redBtn);
 var redInput=document.createElement('input');
 redInput.type="radio";
@@ -75,6 +77,7 @@ redBtn.appendChild(redSquare);
 
 var blueBtn=document.createElement('label');
 blueBtn.className="btn";
+blueBtn.title="blue";
 controls.appendChild(blueBtn);
 var blueInput=document.createElement('input');
 blueInput.type="radio";
@@ -89,6 +92,7 @@ blueBtn.appendChild(blueSquare);
 
 var greenBtn=document.createElement('label');
 greenBtn.className="btn";
+greenBtn.title="green";
 controls.appendChild(greenBtn);
 var greenInput=document.createElement('input');
 greenInput.type="radio";
@@ -103,6 +107,7 @@ greenBtn.appendChild(greenSquare);
 
 var coralBtn=document.createElement('label');
 coralBtn.className="btn";
+coralBtn.title="coral";
 controls.appendChild(coralBtn);
 var coralInput=document.createElement('input');
 coralInput.type="radio";
@@ -117,6 +122,7 @@ coralBtn.appendChild(coralSquare);
 
 var purpleBtn=document.createElement('label');
 purpleBtn.className="btn";
+purpleBtn.title="purple";
 controls.appendChild(purpleBtn);
 var purpleInput=document.createElement('input');
 purpleInput.type="radio";
@@ -132,6 +138,7 @@ purpleBtn.appendChild(purpleSquare);
 //eraser
 var eraseBtn=document.createElement('label');
 eraseBtn.className="btn";
+eraseBtn.title="eraser";
 controls.appendChild(eraseBtn);
 var eraseInput=document.createElement('input');
 eraseInput.type="radio";
@@ -148,6 +155,7 @@ eraseBtn.appendChild(eraseImg);
 //clear screen
 var clearBtn=document.createElement('label');
 clearBtn.className="btn";
+clearBtn.title="clear canvas";
 controls.appendChild(clearBtn);
 var clearAll=document.createElement('button');
 clearAll.textContent="Start Over";
