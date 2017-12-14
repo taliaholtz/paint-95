@@ -43,97 +43,25 @@ var canvas=document.createElement('div');
 canvas.id="canvas";
 easel.appendChild(canvas);
 
-//color choices
-var blackBtn=document.createElement('label');
-blackBtn.className="btn";
-blackBtn.title="black";
-controls.appendChild(blackBtn);
-var blackInput=document.createElement('input');
-blackInput.type="radio";
-blackInput.class="button black";
-blackInput.name="color";
-blackInput.value="black";
-blackInput.checked=true;
-blackInput.addEventListener("click",setMarker);
-blackBtn.appendChild(blackInput);
-var blackSquare=document.createElement('div');
-blackSquare.className="black";
-blackBtn.appendChild(blackSquare);
-
-var redBtn=document.createElement('label');
-redBtn.className="btn";
-redBtn.title="red";
-controls.appendChild(redBtn);
-var redInput=document.createElement('input');
-redInput.type="radio";
-redInput.class="button red";
-redInput.name="color";
-redInput.value="red";
-redInput.addEventListener("click",setMarker);
-redBtn.appendChild(redInput);
-var redSquare=document.createElement('div');
-redSquare.className="red";
-redBtn.appendChild(redSquare);
-
-var blueBtn=document.createElement('label');
-blueBtn.className="btn";
-blueBtn.title="blue";
-controls.appendChild(blueBtn);
-var blueInput=document.createElement('input');
-blueInput.type="radio";
-blueInput.class="button blue";
-blueInput.name="color";
-blueInput.value="blue";
-blueInput.addEventListener("click",setMarker);
-blueBtn.appendChild(blueInput);
-var blueSquare=document.createElement('div');
-blueSquare.className="blue";
-blueBtn.appendChild(blueSquare);
-
-var greenBtn=document.createElement('label');
-greenBtn.className="btn";
-greenBtn.title="green";
-controls.appendChild(greenBtn);
-var greenInput=document.createElement('input');
-greenInput.type="radio";
-greenInput.class="button green";
-greenInput.name="color";
-greenInput.value="green";
-greenInput.addEventListener("click",setMarker);
-greenBtn.appendChild(greenInput);
-var greenSquare=document.createElement('div');
-greenSquare.className="green";
-greenBtn.appendChild(greenSquare);
-
-var coralBtn=document.createElement('label');
-coralBtn.className="btn";
-coralBtn.title="coral";
-controls.appendChild(coralBtn);
-var coralInput=document.createElement('input');
-coralInput.type="radio";
-coralInput.class="button coral";
-coralInput.name="color";
-coralInput.value="coral";
-coralInput.addEventListener("click",setMarker);
-coralBtn.appendChild(coralInput);
-var coralSquare=document.createElement('div');
-coralSquare.className="coral";
-coralBtn.appendChild(coralSquare);
-
-var purpleBtn=document.createElement('label');
-purpleBtn.className="btn";
-purpleBtn.title="purple";
-controls.appendChild(purpleBtn);
-var purpleInput=document.createElement('input');
-purpleInput.type="radio";
-purpleInput.class="button purple";
-purpleInput.name="color";
-purpleInput.value="purple";
-purpleInput.addEventListener("click",setMarker);
-purpleBtn.appendChild(purpleInput);
-var purpleSquare=document.createElement('div');
-purpleSquare.className="purple";
-purpleBtn.appendChild(purpleSquare);
+//color palette
+var colorPalette=["black","red","blue","green","coral","purple"];
+for (var i=0;i<colorPalette.length;i++){
+    var currentColor = colorPalette[i];
+    var btn=document.createElement('label');
+    btn.className="btn";
+    btn.title=currentColor;
+    controls.appendChild(btn);
+    var btnInput=document.createElement('input');
+    btnInput.type="radio";
+    btnInput.class="button " + currentColor;
+    btnInput.name="color";
+    btnInput.value=currentColor;
+    btnInput.addEventListener("click",setMarker);
+    btn.appendChild(btnInput);
+    var btnSquare=document.createElement('div');
+    btnSquare.className=currentColor;
+    btn.appendChild(btnSquare);
+}
 
 //eraser
 var eraseBtn=document.createElement('label');
